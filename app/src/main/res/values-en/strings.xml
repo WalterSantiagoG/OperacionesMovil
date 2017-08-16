@@ -7,4 +7,6 @@
     <string name="resultado">Result</string>
     <string name="segundo_numero">Second  Number</string>
     <string name="titulo">TITLE</string>
+    <string name="mensaje_error_uno">Type number one</string>
+    <string name="mensaje_error_dos">Type number two</string>
 </resources>

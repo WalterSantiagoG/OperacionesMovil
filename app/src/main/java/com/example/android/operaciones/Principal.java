@@ -1,6 +1,7 @@
 package com.example.android.operaciones;
 
 import android.content.res.Resources;
+import android.renderscript.Double2;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -48,12 +49,30 @@ public class Principal extends AppCompatActivity {
     //Estructura para llamar a un botón
     public void calcular (View v){
 
-        if (validar()){
-            int num1, num2, resultado;
+        double num1, num2, resultado=0;
+        int opcion;
 
-            num1 = Integer.parseInt(n1.getText().toString()) ;
-            num2 = Integer.parseInt(n2.getText().toString()) ;
-            resultado = num1 + num2;
+        if (validar()){
+
+            opcion=operaciones.getSelectedItemPosition();
+            num1 = Double.parseDouble(n1.getText().toString()) ;
+            num2 = Double.parseDouble(n2.getText().toString()) ;
+
+            switch (opcion){
+                case 0:
+                    resultado = num1 + num2;
+                    break;
+                case 1:
+                    resultado = num1 - num2;
+                    break;
+                case 2:
+                    resultado = num1 * num2;
+                    break;
+                case 3:
+                    resultado = num1 / num2;
+                    break;
+            }
+
 
             res.setText(""+resultado);
         }

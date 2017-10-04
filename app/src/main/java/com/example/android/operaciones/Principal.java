@@ -45,7 +45,7 @@ public class Principal extends AppCompatActivity {
             return false;
         }
 
-        if ((Integer.parseInt(n2.getText().toString())==0) && (posicion==3)){
+        if (Metodos.denominadorDivisionCero(Double.parseDouble(n2.getText().toString()),3)){
             Toast.makeText(this, resouces.getString(R.string.mensaje_error_tres),Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -67,16 +67,16 @@ public class Principal extends AppCompatActivity {
 
             switch (opcion){
                 case 0:
-                    resultado = num1 + num2;
+                    resultado = Metodos.sumar(num1,num2);
                     break;
                 case 1:
-                    resultado = num1 - num2;
+                    resultado = Metodos.restar(num1,num2);
                     break;
                 case 2:
-                    resultado = num1 * num2;
+                    resultado = Metodos.multiplicar(num1,num2);
                     break;
                 case 3:
-                    resultado = num1 / num2;
+                    resultado = Metodos.dividir(num1,num2);
                     break;
             }
 
